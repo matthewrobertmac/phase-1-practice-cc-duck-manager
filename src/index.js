@@ -27,43 +27,48 @@ function addDucks(ducks) {
       duckDisplayLikes.addEventListener("click", () => {
         likesCounter++,
         duckDisplayLikes.textContent = `${likesCounter} likes`
-      })   
-  });
-  /*
-  const images = duckNav.getElementsByTagName("img");
 
-  for (let i = 0; i < images.length; i++) {
-    images[i].addEventListener("click", function() {
-      const duckDisplayImage = document.getElementById("duck-display-image");
-      duckDisplayImage.src = ducks[i].img_url
-      const duckDisplayName = document.getElementById("duck-display-name")
-      duckDisplayName.textContent = ducks[i].name;
-      console.log(duckDisplayName.textContent);
-      let duckDisplayLikes = document.getElementById("duck-display-likes")
-      let likesCounter = ducks[i].likes;
-      duckDisplayLikes.textContent = `${likesCounter} likes`;
+    
 
-      duckDisplayLikes.addEventListener("click", () => {
-        likesCounter++
-      })
-*/
+
+      });
+      let form = document.getElementById("new-duck-form");
+      let nameInForm = document.getElementById("")
+      form.addEventListener("submit", (e) => {
+      e.preventDefault(),
+      (console.log(e.target["duck-name-input"].value)),
+      console.log(e.target["duck-image-input"].value),
+      newImg = document.createElement("img"),
+      newImg.src = e.target["duck-image-input"].value,
+      duckNav.appendChild(newImg)
+      newImg.addEventListener("click", function() {
+        const duckDisplayImage = document.getElementById("duck-display-image");
+        duckDisplayImage.src = newImg.src
+        const duckDisplayName = document.getElementById("duck-display-name")
+        duckDisplayName.textContent = e.target["duck-name-input"].value;
+        console.log(duckDisplayName.textContent);
+        let duckDisplayLikes = document.getElementById("duck-display-likes")
+        let likesCounter = 0;
+        duckDisplayLikes.textContent = `${likesCounter} likes`;
+  
+        duckDisplayLikes.addEventListener("click", () => {
+          likesCounter++,
+          duckDisplayLikes.textContent = `${likesCounter} likes`
+  
+      
+  
+  
+        });
+
+
     })
+ 
 
-  }
+  });
 
-//`${likeCounter} +  likes`;
 
-/*
-button.addEventListener("click", () => {
-  liker++
-  button.textContent = 
-})
+    });
+  
 
-button.addEventListener("click", likerCount)
-
-function likerCount() {
-  le
+  })
 }
-
-When the likes button is clicked, it increments the number of likes displayed for that duck. Be sure that the button continues to read "X likes".
-*/
